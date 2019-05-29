@@ -36,7 +36,6 @@ alias df="df -h"
 alias ps-node="ps -aux | grep node | grep -v grep"
 alias lsa="ls -a"
 alias lsg="ls | grep --color=auto"
-alias cdw="cd /home/crypto/coingarden/webServices"
 
 light_green="\e[0;32m"
 light_brown="\e[0;33m"
