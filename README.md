@@ -3,9 +3,9 @@
 This is really just my personal preferences for tools when working with linux.
 
 Currently includes:
-*.profile
-*.vim
-*.vimrc
+* .profile
+* .vim
+* .vimrc
 
 To install, run install.sh and accept which parts you want by entering 'y' when prompted.
 
