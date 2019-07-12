@@ -25,6 +25,9 @@ filetype plugin indent on
 " Configuration Section
 """"""""""""""""""""""""""""""""""
 
+set undodir=~/.vim/undodir
+set undofile
+
 set nowrap
 set number
 
