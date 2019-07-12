@@ -6,6 +6,7 @@ Currently includes:
 * .profile
 * .vim
 * .vimrc
+* vim version control (vim version 7.3+ required)
 
 To install, run install.sh and accept which parts you want by entering 'y' when prompted.
 
