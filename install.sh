@@ -5,6 +5,7 @@ read override_vimdir
 if [[ "$override_vimdir" == "y" ]]; then
     cp -R vim ~/.vim
 fi
+mkdir -p ~/.vim/undodir
 
 echo "Override your ~/.vimrc file? (y/n)"
 read override_vimrc
