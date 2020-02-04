@@ -1,30 +1,53 @@
 set nocompatible
 set encoding=utf8
-filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
 
-Plugin 'gmarik/Vundle.vim'
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-Plugin 'scrooloose/nerdtree'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'Shougo/vimproc.vim'
+call plug#begin('~/.vim/plugged')
 
-Plugin 'vim-syntastic/syntastic'
-Plugin 'Townk/vim-autoclose'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'Quramy/tsuquyomi'
-Plugin 'ervandew/supertab'
-Plugin 'nvie/vim-flake8'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+Plug 'gmarik/Vundle.vim'
 
-Plugin 'ajh17/Spacegray.vim'
-call vundle#end()
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'Shougo/vimproc.vim'
 
-filetype plugin indent on
+Plug 'vim-syntastic/syntastic'
+Plug 'Townk/vim-autoclose'
+Plug 'leafgarland/typescript-vim'
+Plug 'Quramy/tsuquyomi'
+Plug 'ervandew/supertab'
+Plug 'nvie/vim-flake8'
+Plug 'vim-scripts/indentpython.vim'
+
+Plug 'ajh17/Spacegray.vim'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'branch': 'release/1.x',
+  \ 'for': [
+    \ 'javascript',
+    \ 'typescript',
+    \ 'css',
+    \ 'less',
+    \ 'scss',
+    \ 'json',
+    \ 'graphql',
+    \ 'markdown',
+    \ 'vue',
+    \ 'lua',
+    \ 'php',
+    \ 'python',
+    \ 'ruby',
+    \ 'html',
+    \ 'swift' ] }
+
+Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim'}
+call plug#end()
 
 """"""""""""""""""""""""""""""""""
 " Configuration Section
@@ -71,9 +94,9 @@ set t_Co=256
 colorscheme spacegray
 
 "Syntastic Configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
@@ -93,5 +116,4 @@ map <C-K> <C-W><C-K>
 map <C-L> <C-W><C-L>
 
 let python_highlight_all=1
-syntax on
 
