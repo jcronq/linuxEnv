@@ -21,6 +21,10 @@ if [ -d "$HOME/.bin" ] ; then
     PATH="$HOME/.bin:$PATH"
 fi
 
+if [ -d "/home/nfs/code/aws/bin" ] ; then
+    PATH="/home/nfs/code/aws/bin:$PATH"
+fi
+
 alias ls="ls -lrthF --color=auto"
 alias sl="ls"
 alias LS="ls"
